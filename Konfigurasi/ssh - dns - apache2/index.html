@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Konfigurasi Debian</title>
+    <!-- Menu mulai -->
+
+    <style>
+      /* Gaya dasar navbar */
+      .navbar {
+        background-color: #333;
+        overflow: hidden;
+      }
+
+      /* Gaya tombol navigasi dalam navbar */
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      /* Gaya tombol navigasi ketika digantikan */
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+    </style>
+    <div class="navbar">
+      <!-- Tiga tombol navigasi -->
+      <a href="https://www.debian.org">DebianServer</a>
+      <a href="/Langkah Instalasli/">Langkah Instalasi </a>
+      <a href="/Konfigurasi/">Konfigurasi</a>
+    </div>
+
+    <!-- Menu Selesai -->
+  </head>
+  <body style="background-color: aliceblue">
+    <!-- konfig mulai -->
+    <p></p>
+    <h2 style="margin-left: 60px; font-family: 'Times New Roman', Times, serif">
+      Konfigurasi SSH, DNS, & WebServer Apache2
+    </h2>
+    <br />
+
+    <h2 style="margin-left: 40px; font-family: 'Times New Roman', Times, serif">
+      Apa itu SSH ?
+    </h2>
+    <p style="margin-left: 40px">
+      Secure Shell (SSH) merupakan protokol jaringan yang digunakan untuk remote
+      jarak jauh dengan komunikasi data yang aman atau ter-enkripsi. SSH ini
+      berjalan pada port TCP 22.
+    </p>
+
+    <br />
+    <h2 style="margin-left: 40px; font-family: 'Times New Roman', Times, serif">
+      Konfigurasi SSH Server
+    </h2>
+
+    <h5
+      style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+      1. Instalasi Open SSH server di Debian 11
+    </h5>
+    <div
+      class="col-sm-10 p-3 border"
+      style="margin-left: 40px; background-color: lightgrey"
+    >
+      <p>
+        sudo apt update <br />
+        sudo apt install openssh-server
+      </p>
+    </div>
+
+    <h5
+      style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+      2. Konfigurasi untuk mengizinkan root login
+    </h5>
+    <div
+      class="col-sm-10 p-3 border"
+      style="margin-left: 40px; background-color: lightgrey"
+    >
+      <p>
+        sudo nano /etc/ssh/sshd_config
+        <br />
+        <i style="color: dimgray"
+          ># lalu pada bagian PermitRootLogin hapus tanda # & ubah menjadi<br
+        /></i>
+        PermitRootLogin <span>yes</span>
+      </p>
+    </div>
+
+    <h5
+      style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+      3. Konfigurasi untuk mengubah port default 22 menjadi 2222
+    </h5>
+    <div
+      class="col-sm-10 p-3 border"
+      style="margin-left: 40px; background-color: lightgrey"
+    >
+      <p>
+        <i style="color: dimgray"
+          ># hapus tanda # pada Port 22 & ubah menjadi <br
+        /></i>
+        Port 2222
+      </p>
+    </div>
+
+    <h5
+      style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+      4. Save konfigurasi SSH lalu restart & cek status service ssh
+    </h5>
+    <div
+      class="col-sm-10 p-3 border"
+      style="margin-left: 40px; background-color: lightgrey"
+    >
+      <p>
+        sudo systemctl restart sshd <br />
+        sudo systemctl status sshd
+      </p>
+    </div>
+
+    <h5
+      style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+      5. Untuk mengujinya silahkan buka aplikasi PuTTY di Windows lalu isi
+      bagian Host Name (or IP address) dengan IP address Debiannya <br />
+      lalu bagian Port isikan port SSH-nya yakni port 2222 lalo tekan Open
+    </h5>
+    <br />
+    <br />
+
+    <h2 style="margin-left: 40px; font-family: 'Times New Roman', Times, serif">
+      Apa itu DNS Server ?
+    </h2>
+    <p style="margin-left: 40px">
+      Sebuah komputer server yang menjalankan layanan DNS. DNS (Domain name
+      system) adalah suatu sistem yang bertugas untuk menerjemahkan nama domain
+      menjadi IP address maupun sebaliknya dan juga mencari alamat host untuk
+      memenuhi request dari client. DNS berjalan di port UDP 53.
+    </p>
+
+    <br />
+    <h2 style="margin-left: 40px; font-family: 'Times New Roman', Times, serif">
+      Konfigurasi DNS Server
+    </h2>
+
+    <p style="margin-left: 40px">
+      Salah satu layanan DNS server di Linux adalah bind9, kita akan menambahkan
+      domain: namaanda.com & www.namaanda.com
+    </p>
+
+    <h5
+      style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+      1. install bind9 & dnsutils di Debian
+    </h5>
+    <div
+      class="col-sm-10 p-3 border"
+      style="margin-left: 40px; background-color: lightgrey"
+    >
+      <p>
+        sudo apt update <br />
+        sudo apt install bind9 dnsutils
+      </p>
+    </div>
+
+    <h5
+      style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+      2. konfigurasi zone pada named.conf.local
+    </h5>
+    <div
+      class="col-sm-10 p-3 border"
+      style="margin-left: 40px; background-color: lightgrey"
+    >
+      <p>
+        cd /etc/bind <br />
+        sudo nano named.conf.local<br />
+        <br />
+        zone "alfajjar.com" {<br />
+        type master;<br />
+        file "/etc/bind/db.domain";<br />
+        };<br />
+        <br />
+        zone "1.16.172.in-addr.arpa" {<br />
+        type master;<br />
+        file "/etc/bind/db.ip";<br />
+        };
+      </p>
+    </div>
+
+    <h5
+      style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+      3. buat file zone (db.domain) untuk menerjemahkan nama domain ke IP
+      address
+    </h5>
+    <div
+      class="col-sm-10 p-3 border"
+      style="margin-left: 40px; background-color: lightgrey"
+    >
+      <p>
+        sudo cp db.local db.domain<br />
+        sudo nano db.domain<br />
+        <img src="img/cname.png" />
+      </p>
+    </div>
+
+    <h5
+      style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+      4. buat file zone (db.ip) untuk menerjemahkan IP address ke nama domain
+    </h5>
+    <div
+      class="col-sm-10 p-3 border"
+      style="margin-left: 40px; background-color: lightgrey"
+    >
+      <p>
+        sudo cp db.127 db.ip<br />
+        sudo nano db.ip<br />
+        <img src="img/http n  www.png" />
+      </p>
+    </div>
+    <br />
+
+    <h2 style="margin-left: 40px; font-family: 'Times New Roman', Times, serif">
+      DNS Forwarding
+    </h2>
+
+    <p style="margin-left: 40px">
+      Meneruskan permintaan domain yang tidak tersedia di DNS server local ke
+      DNS server external
+    </p>
+    
+    <h5
+    style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+    1. konfigurasi DNS forwarders di named.conf.options, hapus tanda # di
+    depan script berikut & tambahkan beberapa script berikut
+    </h5>
+    <div
+      class="col-sm-10 p-3 border"
+      style="margin-left: 40px; background-color: lightgrey"
+    >
+      <p>
+        sudo nano named.conf.options <br />
+        <img src="img/forwarders.png" />
+      </p>
+    </div>
+
+    <h5
+    style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+      2. restart & test konfigurasi
+    </h5>
+    <div
+      class="col-sm-10 p-3 border"
+      style="margin-left: 40px; background-color: lightgrey"
+    >
+      <p>sudo systemctl restart bind9<br>
+        nslookup alfajjar.com<br>
+        
+          <p style="margin-left: 30px;">
+            Server:         172.16.1.2<br>
+            Address:        172.16.1.2#53<bR>
+              <br>
+            Name:   alfajjar.com<br>
+            Address: 172.16.1.2</p>
+        
+        ping google.com</p>
+    </div>
+    <br>
+    <br>
+    
+    <h2 style="margin-left: 40px; font-family: 'Times New Roman', Times, serif">
+      Apa itu Web Server ?
+    </h2>
+    <p style="margin-left: 40px">
+      Komputer yang menyimpan, memproses, dan mengirim file situs web ke browser web. Server web menggunakan protokol HTTP (Hypertext Transfer Protocol) untuk menanggapi permintaan pengguna web dari World Wide Web (www)<br>
+      HTTP termasuk dalam lapisan ke-7 OSI & lapisan ke-5 TCP/IP<br>
+      <br>
+      Jenis - jenis web servers:<br>
+      - Apache servers <br>
+      - Apache Tomcat (Java based) <br>
+      - NGINX <br>
+      - Lighttpd <br>
+      - Microsoft IIS (internet information services) <br>
+    </p>
+    
+    <h2 style="margin-left: 40px; font-family: 'Times New Roman', Times, serif">
+      Apache Web Server
+    </h2>
+    <p style="margin-left: 40px">
+      Sebuah software yang digunakan untuk web server yang bersifat open source dan gratis. apache ini dapat berjalan diberbagai sistem operasi seperti Windows, Unix-like, OpenVMS, dll
+    </p>
+
+    <h5
+      style="
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      "
+    >
+    </h5>
+    <div
+      class="col-sm-10 p-3 border"
+      style="margin-left: 40px; background-color: lightgrey"
+    >
+      <p></p>
+    </div>
+    
+  
+
+
+
+
+
+
+
+
+
+
+    <p style="margin-bottom: 100px"></p>
+
+    <!-- konfig selesai -->
+  </body>
+</html>

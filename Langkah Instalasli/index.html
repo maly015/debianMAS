@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Instalasi Debian-Linux</title>
+    <!-- Menu mulai -->
+
+    <style>
+      /* Gaya dasar navbar */
+      .navbar {
+        background-color: #333;
+        overflow: hidden;
+      }
+
+      /* Gaya tombol navigasi dalam navbar */
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      /* Gaya tombol navigasi ketika digantikan */
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+    </style>
+    <div class="navbar">
+      <!-- Tiga tombol navigasi -->
+      <a href="https://www.debian.org">DebianServer</a>
+      <a href="/Langkah Instalasli/">Langkah Instalasi </a>
+      <a href="/Konfigurasi/">Konfigurasi Dasar</a>
+    </div>
+
+    <!-- Menu Selesai -->
+  </head>
+
+  <body>
+    <img
+      src="https://www.debian.org/Pics/debian-logo-1024x576.png"
+      width="150"
+      height="90"
+      align="right"
+    />
+    <h1 class="custom-text" align="center">
+      Langkah Langkah Menginstal DebianServer di Virtual Box
+    </h1>
+    <style>
+      .custom-text {
+        color: yellow(199, 251, 12);
+        font-size: 50px;
+        font-family: Times new roman;
+      }
+
+      .about{
+        margin: 50px;
+      }
+
+    </style>
+    <hr />
+
+    <!-- Perkenalan debian -->
+    <p class="about">
+      Debian adalah salah satu distribusi sistem operasi Linux yang populer dan
+      sangat terkenal. Ini adalah proyek sumber terbuka yang dibangun oleh
+      sekelompok besar sukarelawan dari seluruh dunia. Debian menonjol karena
+      berfokus pada prinsip-prinsip perangkat lunak bebas, stabilitas, dan
+      keamanan.
+    </p>
+    <blockquote class="about">
+      Beberapa ciri khas Debian adalah:<br />
+
+      1. <b>Sumber Terbuka:</b> Debian sepenuhnya berdasarkan perangkat lunak
+      sumber terbuka. Ini berarti kode sumbernya dapat diakses oleh siapa saja
+      untuk dianalisis, dimodifikasi, atau didistribusikan ulang.<br />
+      2. <b>Siklus Rilis Stabil:</b> Debian dikenal dengan rilis stabilnya yang
+      berfokus pada memberikan sistem operasi yang andal dan stabil kepada
+      pengguna. Ini menjadikannya pilihan yang baik untuk server dan lingkungan
+      produksi.<br />
+      3.<b>Manajemen Paket APT:</b> Debian menggunakan Advanced Package Tool
+      (APT) untuk mengelola paket perangkat lunak. Ini memungkinkan pengguna
+      dengan mudah menginstal, menghapus, dan memperbarui perangkat lunak pada
+      sistem Debian. <br />
+      4. <b>Repository yang Luas:</b> Debian memiliki repositori perangkat lunak
+      yang sangat luas yang mencakup ribuan paket berbeda, termasuk perangkat
+      lunak aplikasi, perpustakaan, dan alat pengembangan. <br />
+      5. <b>Beragam Arsitektur:</b> Debian mendukung beragam arsitektur
+      perangkat keras, sehingga dapat diinstal di berbagai jenis komputer, dari
+      PC biasa hingga perangkat seperti server, mainframe, atau embedded
+      systems.
+    </blockquote>
+
+    <p class="about">
+      Debian juga merupakan dasar bagi banyak distribusi Linux lainnya, termasuk
+      Ubuntu. Debian adalah salah satu distribusi Linux tertua dan memiliki
+      komunitas yang kuat di seluruh dunia yang terus mengembangkan dan
+      memelihara distribusi ini.
+    </p>
+    <!-- Perkenalan selesai -->
+
+    <!-- Persiapan Mulai -->
+
+    <h3>
+      1. Pertama - tama yang harus kalian siapkan adalah
+      <q>APK VirtualBox</q> dan <q>ISO Debian</q>
+    </h3>
+
+    <!-- gambar VB  dan link download-->
+    <img
+      src="https://www.nesabamedia.com/wp-content/uploads/2018/12/Virtualbox-logo-1.png"
+      width="200"
+      height="200"
+      align="center"
+      style="margin-left: 100px"
+    />
+
+    <a
+      class="nav-link active"
+      aria-current="page"
+      href="https://download.virtualbox.org/virtualbox/7.0.8/VirtualBox-7.0.8-156879-Win.exe"
+      target="_blank"
+      >Link Download Virtual Box
+    </a>
+
+    <!-- gambar ISO dan link download-->
+    <img
+      src="https://icon-library.com/images/iso-icon/iso-icon-29.jpg"
+      width="200"
+      height="200"
+      align="center"
+      style="margin-left: 100px"
+    />
+
+    <a
+      class="nav-link active"
+      aria-current="page"
+      href="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.0.0-amd64-netinst.iso"
+      target="_blank"
+      >Link Download ISO Debian 12
+    </a>
+
+    <h3>
+      2. Setelah kalian selesai menginstall, buka aplikasi <q>VirtualBox nya</q>
+    </h3>
+
+    <h3>3. Tekan <q>New</q></h3>
+    <img
+      src="https://1.bp.blogspot.com/-Vqx3GaE5YXw/Xxhfqgfyc6I/AAAAAAAADIA/QAEliKd2-eEOfKvO-_3-hA3xiYePuMQlgCLcBGAsYHQ/s807/01.JPG"
+      width="500px"
+    />
+
+    <h3>
+      4.Isi nama sesuai keinginan dan ubah tipe dan versi seperti gambar
+      dibawah. lalu klik lanjut
+    </h3>
+    <img
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrZ51SjQP_hnbcEONJlNq5aREfnOuiDahC9WhZhrq5Gq_lSX2-y-fsaZGVoJFeB3QWqzlRxS6Zl0JnbDtFLOCfTvIH94t3fq9L7bdrdh5Atlogdms4_mUXAbXSRMYacdmuZOht3WykaMTQ39mMpI8Wo1EaPsWjKtp1bYwIbRjd74IeMLHDM_jdlxBQ/s644/074-02.jpg"
+    width="500px"" />
+
+    <h3>5.Atur ukuran memori sesuai spesifikasi perangkat dan kebutuhan</h3>
+    <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjw89UD-mxKonPhFviS69Q5EqA9mzA_AaDuL3qz5ZSWSImOKDsr7Av831kI-3ee7Xwrr5hOExUWcKLTBu30nrGT3PXrw_C_1luXUTERNiiRFIKyQ7r67XNSlbLMdcE6n3HLSMSNt9Eb3jXjQ1-RMmzWtpMqywfZ2eYhwGRBFHCBCI_Y9w4rsHW9GZf2/s644/074-03.jpg"
+      width="500px"
+    />
+
+    <h3>6.Pilih opsi <q>buat hardisk sekarang</q></h3>
+    <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0jLWsAgkiBRcBjIXWXwY5X7Qh2PKLqlMLAnObiXtjL1QgnFDIm2EAD4pVkHm_lNinUaD--NNUDKtohdcUtUrOEzoI0hjjBo54d379XGKJCfhqeVyGSDfqQq6GH9G69vi671EwOwVFxUEqAoISUUzRzM-0rWTDWPoSewiu2ozfK1eEAbUh_mPDNpfA/s640/074-04.jpg"
+      width="500px"
+    />
+
+    <h3>7.Pilih opsi <q>VHD(Virtual Hardisk)</q></h3>
+    <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkgRANWG2t2DkuK83t6c3WRH7AOVCqqj7UEyh1qDGtOd0Oisbl1x4o7kdZp5cU470X0W4NeVR-RYRKjK5csKzxJgUJikYX5ZHzDWAAgt3Nvh5GQeBWaPbf06C6Z4zY4igCntkr3or0dtvmnHCbFv_YplPqkpXatBHZnVLC1CYkE_zpwqhMQjA3JoNH/s840/074-05.jpg"
+      width="500px"
+    />
+
+    <h3>8.Pilih opsi <q>Dialokasikan secara dinamik</q></h3>
+    <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5Q3Jbi1N_w9SWxcUxelrKF19vbcAO_bDWvLEk3TT1AvFHrwtxSmaLbYp-oYqLK-QQYHVZQTh6GVjvIh5mgwUBmFIa9TLRnfye62PulxDtBh2RdAFszLyc5yD2zLhYJGthS9M3OX6VF7qa4XRvMy5Qtb5kQoq2Wkk_E8XW97_6CoywYCmMeIKjeLeF/s837/074-06.jpg"
+      width="500px"
+    />
+
+    <h3>
+      9.Tentukan lokasi virtual machine dan kapasitas harddisk. Kemudian klik
+      "buat"
+    </h3>
+    <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9ExR4BCuXqd37Tbnt0HFa_FeMSK7KO9NCIfdY4SDcDDeGBDD2yF2Lzl9tW3qAbAJVlwntVPHm3QakIrVG60kpztBEmpoWtwkhMfHfF9Wl1R5jxzHOskRoTzQeLUig7B74D3AOOdzCQoPRhM-isu9s0PRmJ8WbBwIpP3XukZt1RVDV_MK3oBQ0v9U7/s839/074-07.jpg"
+      width="500px"
+    />
+
+    <h3>
+      10.Setelah virtual machine dibuat, masukkan ISO Debian. Klik "pengaturan"
+    </h3>
+    <img
+      src="https://1.bp.blogspot.com/-IU_g8mwBk2g/ZIF71ouoSPI/AAAAAAAA_FI/dA3QWyWWmY8UsN8-Ub5jfVghBnFAHh73ACNcBGAsYHQ/s1408/074-08.jpg"
+      width="500px"
+    />
+
+    <h3>11.Klik "penyimpanan", lalu klik logo CD</h3>
+    <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhH_2XOFladZ503mmi8PUfMcUBhlSowY7EYtXebzGvG4q363GXObkYIapnunsQUk9jJ8g2BUsVYCddfmKWYUyEyrIqilSVL4wnnouA7GXjgYfipwcFua012igx0R-tE5HtUnI1TTFVb7j_PPh9ViOTMCfKgbE97-4s4pGKkhCbbxsHxntD5nurSqJ-o/s713/074-09.jpg"
+      width="500"
+    />
+
+    <h3>12.Pilih file ISO yang sudah didownload, lalu klik "open"</h3>
+    <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVF1DQDvtLw3hPcHbzhge8GUlwSicgwHylHrvmN-P5iRRF73XQkeUn-xFU3rYVEDwvulpQBvHZbEefLOyYrYTcfbp5aaYvhV7gvGfe9BZf00ILZT5K1GQJCmc9reC73Poc8cSWZr-hgY9nLrYNPMHlZrVmfhSV2jfJDbrTJCkT3Oxwa7wXcp_WFhnD/s694/074-10.jpg"
+      width="500"
+    />
+
+    <h3>
+      13.Masuk kembali ke Pengaturan dan pilih opsi Jaringan. Di sini, kita
+      perlu mengubah Adaptor 1 menjadi Adaptor Hanya-host agar dapat terbuka di
+      browser. Sesudah itu, klik tombol OK.
+    </h3>
+    <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4Jz7Pj2rRRZMmHOPGI7RZhpjjD3Uu0mhvZ4Y3933pDvNwaUkZrKqq_2hXYB8YkBgi2FTSasd03VneAQDVKM-cUAE1GVlvpjXnW89xQma7PnKASsc3C68Cw1LIZd6NuSyUwYphAp_a6hGypnbHTi-9du0jYcnDkbNW3MteIEV104RzE0CoQ5_p7p2b/s974/074-11.jpg"
+      width="500px"
+    />
+
+    <h3>14.Jalankan virtual machine, klik "start"</h3>
+    <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9wWE8KEW8ujcbYS5N-ZbXm3IibblsOezgi89Zpm8HCbBZQmIPj3PVgUtAcSfF4PzkrEr1r-LbrqMHuDiy1JlhUChN_6Q_O53-9yLJaqYj1UWv_U-p13xPjBJKSVHsXKKWpy7ZeOQmqDSxUep-0bOd7mjZQBH3nOtkL2s9eekBYLEACZYJMJ6lvgsn/s688/074-12.jpg"
+      width="500px"
+    />
+
+    <!-- Persiapan Selesai -->
+
+    <!-- Langkah - langkah mulai  -->
+
+    <div class="text">
+      <h3>
+        15.Pilih opsi "install" agar debian ber format CLI(Command Line
+        Interface)
+      </h3>
+      <img
+        src="https://1.bp.blogspot.com/-b2LeGtLsEzA/ZIF8TQp6vqI/AAAAAAAA_Fw/FhSElIbn_YAorEkLXpIsIEhD9VMO2lEjQCNcBGAsYHQ/s827/074-13.jpg"
+        width="500px"
+      />
+
+      <h3>
+        16.Pilih opsi "English" agar perintah berjalan dengan menggunakan bahasa
+        Inggris
+      </h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzB1Js2-xbj7FoXhwqG-yzpDW-AZbUmZGMScQgF3a_JudvOpyfa07glkyW9vzSkajsWZivVZ30QgJlyTiTz04XeZCRC1cnyPbZRPfKb0U44yUfWn8PDC_LhiaKBz7nqJ54uBTWUT_wwSx0BMub8Yd2HP8EICBQ73KjocnLjGmIQccDIPn_FAZ5gnc1/s929/074-14.jpg"
+        width="500"
+      />
+
+      <h3>
+        17.Pilih "Other" lalu "Asia" dan pilih "Indonesia" untuk menentukan
+        lokasi
+      </h3>
+      <img
+        src="https://1.bp.blogspot.com/-vV9bUUl8OIg/ZIF8YUFsDbI/AAAAAAAA_F4/Eo_bgbvZ-FEaG4WyNZyGWj7HS2WSvuj_ACNcBGAsYHQ/s865/074-15.jpg"
+        width="500"
+      />
+
+      <h3>18.Pilih "American English"</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhf0SJ9toVo7oOoakTOFOZG26d5lEjYESUdaAVpUT8IuRSeOPuTOvSUT9w963PmhJujj-lmRb-7Fcts5WOfCag6glZSTYRgIBwz4nuFTCXLTLL4Gy6kemSJ3s2mwljrkoPnPwHwWEOPfSrtjVAjeQmczWLMI7V6sd3Wu_Chh8cdxWXzReJKtMrWGVhf/s905/074-16.jpg"
+        width="500"
+      />
+
+      <h3>19.Tunggu proses instalasi hingga selesai</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixK6jwWfHWL6CLxgGBf1v5VwM6k5haTLSiShkG2SmvwIcpARy8jEn44CgWZh5XUH-wSr02zdeVHDcaSVe5yOgLp5v2bjBFu-JT_rOYrqj41azmJf6gKuKHthaW7W4qUKs6NRnEbIrpcbMFXLcw_VqFV2Sa8u2tObMcLoGCw8bAA85lUutE4fBZykB4/s926/074-17.jpg"
+        width="500"
+      />
+
+      <h3>
+        20.Jangan hubungkan virtual machine dengan internet agar proses
+        instalasi lebih cepat
+      </h3>
+
+      <h3>21.Isi password root dan password user</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfDJyLB7yU-Oi1FQCa6OsQ6qtx5k7z-fYszs58qeDkFa7-ixvEMQY9aq2Vi3-9yr0Ipe1vB3FQ0i5upP_6Cgb_Lsoi80iY2ZZnOmimBpa8Sqbd87yBDkyIBzI3WOcdTzqChxUMjXsAw3at5vHjPCC5_Ehys7Fk9JRH4JUrkQT6HSHZVLH8xGi-hSO8/s924/074-20.jpg"
+        width="500px"
+      />
+
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6NxykDInag6umh3uCOmYpb2W4OXMRgPCCHIMVi-qIY5371m2CbrxsdOcyam_EiYeP_YC7p7wP8X0NeDtyv7kvgXS_2VSxX2Fp_ho2V2NaNCijoiBwg4OofMI_nWWKe0yRw9P8bL496SJmGJh26v3nzatQtRoG5NAxf-b1j6cvSItWl4Zk5ybc_aTg/s926/074-21.jpg"
+        width="500px
+      "
+      />
+
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibDZMaqXSdPA7DbOSEv3xVcQekRm2hcZAcnodUBNJDJHA-TOLTeEL0FAJ4OB1z4V5rFiFXTUWExnUvd5KG2D7YdD5SJJnia266ciK3iQgSOEedt1uDQDoneztLHnN7bMGfZMlt-RP7AssQkpFh6cLrIA3JIPDq19sNdF0cMSskdSZN67qZDsfBBluy/s923/074-22.jpg"
+        width="500px"
+      />
+
+      <h3>22.Pilih zona waktu yang sesuai</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqafeNWVRaYiPdbo-g6TkU0aNizv2C9gZqygdy32u7B1DbrmmMsx8NvyeTewTSQOxa_NnjUegnuV6xG1IURwHEs-pXqXIanTpBvJ_Gn7aq5KgLBMHcR9AQR8_36ahqWc5sCv3VXe8t895DFBjFIHi-lrZesY8RYLUdomgOo1LsuHS7QGlt-f_6AHqO/s924/074-23.jpg"
+        width="500px"
+      />
+
+      <h3>
+        23.Pada opsi Partition disk, pilih Guided - use entire disk dan tentukan
+        disk yang digunakan untuk partisi. Lalu pilihPilihan partitioning
+        scheme, pilih Separate /home, /var, and /tmo partitions.
+      </h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhH6PwBQhpcTJ8DbVeVnu1SlmwK1qqNuuBdbusUdr68fwbadgImy5lFHdkXLywDFRGYmTjmhKkk4YwJr4thFxE5TBIlcc2XQgxrhBnHns-7xDgCZJd_XS_tR6dN1lfMSEAmVM2EvfIqoT4Yg1NpqxGDY9MAt7RqJd9sas0xCqwS3tkUHIOnDe7kaJgM/s923/074-26.jpg"
+        width="500px"
+      />
+
+      <h3>24.Pilih Finish partitioning and write changes to disk.</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFh8rdvOj9_2K4QgzFLxmnF7qOiPR0IVvvlMEdw7XQYBmMgb1BBXi9vBX5f-cAhv8Ry_Hqnzo4Utwe3KGnlq3huVzISrXxxAQiEnFqGLbY3IEPeXHEKN0MCh2p6PQKHZyDkBLA3tHTt-eh5gfKEeLCNDPIVubfDDr6kWiob-23Wms_QFDj_KAPvM5q/s879/074-27.jpg"
+        width="500px"
+      />
+
+      <h3>25.Pilih opsi Yes pada Write the changes to disks.</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwmPO5FvyjNSj_3JazjPibEVip5GpRXISasuRAfDFJLAC4QM6z3yE8VWWTR5Ilay9Op8iGx5ZAzRfugaLHMYicZqZPZxoTZ_lvkvExpJscy5Xpc-0MgwAQMaanKaDRKBuxc_lfIS-pUsX2amvenf6Ll7Pnz9o7NZb7B34BfcDQt0HKujHTceO1xtpe/s844/074-28.jpg"
+        width="500px"
+      />
+
+      <h3>26.Tunggu proses instalasi base system hingga selesai</h3>
+
+      <h3>27.Pilih opsi "no"</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwvofXZc1t3LlDazcm1BMMG82sILRfLkzeC_xjKmPfjqQpzsxvQScTkgKumPlIy2G4ONm-mIXjo9rJd7z5Z1sQv3VMILTiEtG5uOmzjUbv7r24D2F7GWuDiLh1nsJK_LA6x0tmVm9gfHNZiS_Mh-wbXKmi6IE6ocf0KnJWL8lq7VGCyKvSgTgx2z8e/s925/074-31.jpg"
+        width="500px"
+      />
+
+      <h3>28.Pilih opsi "no" juga</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2A3xvqqOJ8Kr6lLV3s02agUS7mBwzgQShN0Y7s4daWfX1wFtmUGuLSpqRwmm-VYUbeS9ok30O32DzEzJFOJNG8WuCD-dCTG79fS3uRwGmZt3DnUnXo7p0zaddJwPfYiFawz62BazGj-9y-eiwAgwplBX-U-l1MW_stOWy6BQ_sM7v_KCRfuwFU-E_/s925/074-32.jpg"
+        width="500px"
+      />
+
+      <h3>29.Pilih opsi "no"</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7TKphY9FxmgG_ez2SrvUb_gjUfviSINCkWBsg12o-wGrQviaqWI5x3of3KOxjHIZJFk4NuAcYNOwDns1z54OcYCprSlSyKlKNlp48l4cT-Yum5_SytaHuVgig_BPbU5dknrAH2y6kmwNsJQ1ysS_2V2B-0VdXigIx_Y0zDghuI9l7uo7HDemXQRg4/s924/074-33.jpg"
+        width="500px"
+      />
+
+      <h3>30.Opsional</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgivJ7X-NirsRX3HoUPHzG3PKk74EI-RUWm2Cjw91BKYhdxMewVgseX6MGfJd5JKX-lL6_8ae3rwksL15GiNS1o-Ya7JaxTTb_uYxsMLchWLtTQcNwtgizZLoS7ey1SxxWU9BW6en7IXg5lj0rPjjzByDqH4FW_hamcJfVbrjp4aJrcrTr--YOqDYE0/s926/074-34.jpg"
+        width="500px"
+      />
+
+      <h3>31.Pilih opsi "yes"</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1uGN7ogOm9EEEoAlNUnIQpWKUtUjjQMlhbVYDhDNG_3v_65IkiuSfSZMj0ZrVw9nNUvUQ8O8UDzchdz1CyFYOsw0Y67NZBLZhm14m4YEz5ch8UB7HHYnxCF8d262q_82VEnoh8N5c8jkSyeqBumOFp3Yn06zWJkVXc7kOW_ggRdEuQNTthkuWnAKC/s926/074-35.jpg"
+        width="500px"
+      />
+
+      <h3>
+        32.Klik opsi yang bawah pada halaman Device for boot loader installation
+      </h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgONOMvjE1a87a12psymqe-JIYC63TYmcU37fRjCjeADiKPEtpA-MxY9jI9xtoshUmvUcW8Zpu4b619E8cS3kTXy__tNuDxCe2q7wbVWxoi3fIkzyidwNljyCol5hAk07dJqaW5P50l3naweuuOvZO50tVEBxcFUlTkfh4pOsJnObY1YFeuN0dyp5tR/s926/074-36.jpg"
+        width="500px"
+      />
+
+      <h3>33.Klik "continue"</h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQ1OUHjXNDoutmtJREYFUTHIiBOliZNws4wUyxh9ndqBCUKovsNtll0tiETZ4plR2dv3u0E9n4lj_8wSERF6XsLEwSwkw78D0Go6PO-duc74nw1bIOtuGXSN-WalXu3l2CUSMg2BVj-28GvS9DgiR0Y5ghhBYaxjQ0DhUkyqoFA9yattjatM07rVd3/s924/074-37.jpg"
+        width="500px"
+      />
+
+      <h3>
+        34.Virtual machine Debian berhasil diinstal, kamu bisa login menggunakan
+        username dan password username yang telah kamu masukkan pada proses
+        penginstalan
+      </h3>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhu-1GbeY20XnYhm-0UNhe2XVG-xP_H8X7o1oUbkQmkB53u7yzIR-kpbcd-3e3B2K2ZiRKlWvuXqaGdKDMbSBRImAG9jifZkztYtBS9Jw0eTDiwikwdd-1kXwBmP_sW2f4l-UArqFrJL6wvnYXjXGPqlpBNRKk2OQOHAIbCrkygCvK46kWlDqm5n5i-/s867/074-38.jpg"
+        width="500px"
+      />
+    </div>
+    <p style="margin-bottom: 100px"></p>
+
+    <!-- Langkah - langkah selesai  -->
+  </body>
+</html>
